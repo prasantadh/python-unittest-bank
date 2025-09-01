@@ -22,10 +22,13 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m venv .venv
+          source .venv/bin/activate
           python -m pip install -r requirements.txt
       
       - name: Run Tests
         run: |
+          which pytest
+          source .venv/bin/activate
           which pytest
           echo $MYSECRET
           pytest
