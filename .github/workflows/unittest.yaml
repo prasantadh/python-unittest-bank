@@ -27,7 +27,6 @@ jobs:
       
       - name: Run Tests
         run: |
-          which pytest
           source .venv/bin/activate
           which pytest
           echo $MYSECRET
