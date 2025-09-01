@@ -10,6 +10,7 @@ This Python project is a starter repo that is used for teaching unit testing, co
 ## Getting Started
 
 1. **Clone the Repository**: Clone the project to your local machine.
+
     ```bash
     git clone <repository-url>
     cd <your-project-directory>
@@ -17,24 +18,29 @@ This Python project is a starter repo that is used for teaching unit testing, co
 
 2. **Create a virtual environment and install requirements**:
 
-```
-python3 -m venv .venv
-source ./.venv/bin/activate
-pip install -r requirements.txt
-```
+  ```bash
+  python3 -m venv .venv
+  source ./.venv/bin/activate
+  pip install -r requirements.txt
+  ```
 
-3. Run the unit tests
+3. **Generate the coverage data**: This can be done by using `coverage` tool:
 
-```bash
-pytest
-```
+  ```bash
+  coverage run -m pytest
+  ```
 
-4. Generate a coverage report
+Or via `pytest` directly
 
-```
-coverage run -m pytest
-coverage html
-```
+  ```bash
+  pytest --cov=bank_account
+  ```
+
+4. **Generate HTML report from coverage data** for ease of viewing
+
+  ```
+  coverage html
+  ```
 
 The first command will generate the coverage report in your terminal. The second will generate an html file in `htmlcov/index.html` which you can view in your browser.
 
