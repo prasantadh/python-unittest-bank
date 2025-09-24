@@ -1,6 +1,9 @@
 name: Run python tests 
 
 on: 
+  pull:
+    branches:
+      - main
   push:
     branches:
       - prasant/ci2
