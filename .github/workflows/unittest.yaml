@@ -1,0 +1,26 @@
+name: Run python tests 
+
+on: 
+  push:
+    branches:
+      - prasant/ci2
+
+jobs:
+  test: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        runs: |
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        runs: pytest
