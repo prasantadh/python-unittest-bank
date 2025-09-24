@@ -1,0 +1,26 @@
+name: Run Python Tests
+
+on:
+  push:
+    branches:
+      - main
+      - prasant/redo
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone the code 
+        uses: actions/checkout@v4
+
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        runs: pip install -r requirements.txt
+
+      - name: Run the tests 
+        runs: pytest
